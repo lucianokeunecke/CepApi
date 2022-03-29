@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 public class FabricanteServiceImpl implements FabricanteService {
+    private static final Logger LOGGER = Logger.getLogger(FabricanteServiceImpl.class.getName());
     @Autowired
     FabricanteRepository fabricanteRepository;
     @Override
@@ -30,6 +32,7 @@ public class FabricanteServiceImpl implements FabricanteService {
 
     @Override
     public Optional<Fabricante> findByNome(String nome) {
+        LOGGER.info(String.format("PARAMETROS BUSCADOS NO SERVICO ----- %s ", nome));
         return  fabricanteRepository.findByNome(nome);
     }
 }

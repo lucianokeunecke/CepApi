@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.SplittableRandom;
 
 @RestController
 @RequestMapping("/fabricante")
@@ -32,7 +33,19 @@ public class FabricanteController {
     }
     @GetMapping("/nome/{nome}")
     public ResponseEntity<?> getByNome(@PathVariable String nome){
+        SplittableRandom random = new SplittableRandom();
         Optional<Fabricante> byNome = this.fabricanteService.findByNome(nome);
+
+        int i = random.nextInt(1000);
+        if(i > 800){
+            try{
+                int i1 = 10 / 0;
+            }catch (RuntimeException ex){
+                ex.printStackTrace();
+                return ResponseEntity.notFound().build();
+            }
+
+        }
         if(byNome.isPresent()) return ResponseEntity.ok().body(byNome.get());
         return ResponseEntity.notFound().build();
     }
