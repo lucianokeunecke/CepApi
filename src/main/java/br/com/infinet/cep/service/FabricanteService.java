@@ -1,6 +1,6 @@
-package br.com.infinet.fabricante.service;
+package br.com.infinet.cep.service;
 
-import br.com.infinet.fabricante.model.Fabricante;
+import br.com.infinet.cep.model.Fabricante;
 
 import java.util.List;
 import java.util.Optional;

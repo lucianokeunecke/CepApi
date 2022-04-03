@@ -1,7 +1,7 @@
-package br.com.infinet.fabricante.controller;
+package br.com.infinet.cep.controller;
 
-import br.com.infinet.fabricante.model.Fabricante;
-import br.com.infinet.fabricante.service.FabricanteService;
+import br.com.infinet.cep.model.Fabricante;
+import br.com.infinet.cep.service.FabricanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

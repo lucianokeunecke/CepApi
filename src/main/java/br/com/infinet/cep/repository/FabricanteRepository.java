@@ -1,6 +1,6 @@
-package br.com.infinet.fabricante.repository;
+package br.com.infinet.cep.repository;
 
-import br.com.infinet.fabricante.model.Fabricante;
+import br.com.infinet.cep.model.Fabricante;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package br.com.infinet.fabricante.config;
+package br.com.infinet.cep.config;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;

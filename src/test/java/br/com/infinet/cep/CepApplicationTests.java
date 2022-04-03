@@ -1,10 +1,10 @@
-package br.com.infinet.fabricante;
+package br.com.infinet.cep;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FabricanteApplicationTests {
+class CepApplicationTests {
 
 	@Test
 	void contextLoads() {

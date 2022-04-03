@@ -1,4 +1,4 @@
-package br.com.infinet.fabricante.model;
+package br.com.infinet.cep.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

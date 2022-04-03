@@ -1,8 +1,8 @@
-package br.com.infinet.fabricante.service.impl;
+package br.com.infinet.cep.service.impl;
 
-import br.com.infinet.fabricante.model.Fabricante;
-import br.com.infinet.fabricante.repository.FabricanteRepository;
-import br.com.infinet.fabricante.service.FabricanteService;
+import br.com.infinet.cep.model.Fabricante;
+import br.com.infinet.cep.repository.FabricanteRepository;
+import br.com.infinet.cep.service.FabricanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.infinet</groupId>
-	<artifactId>fabricante</artifactId>
+	<artifactId>cep</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fabricante</name>
+	<name>cep</name>
 	<description>Projeto para demonstracão</description>
 	<properties>
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
