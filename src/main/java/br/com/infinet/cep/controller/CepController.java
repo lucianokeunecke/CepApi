@@ -2,6 +2,7 @@ package br.com.infinet.cep.controller;
 
 import br.com.infinet.cep.model.CepModel;
 import br.com.infinet.cep.service.CepService;
+import br.com.infinet.cep.service.GerarExcecaoAleatoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,13 @@ public class CepController implements Serializable {
     @Autowired
     CepService cepService;
 
+    @Autowired
+    GerarExcecaoAleatoriaService gerarExcecaoAleatoriaService;
+
     @GetMapping(value="/cep/{numeroCep}")
     public ResponseEntity<CepModel> pesquisar(@PathVariable(name = "numeroCep") String numeroCep) {
+
+        gerarExcecaoAleatoriaService.gerar();
 
         CepModel cepModel = cepService.pesquisar(numeroCep);
 
