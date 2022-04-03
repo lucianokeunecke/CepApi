@@ -1,34 +1,28 @@
 package br.com.infinet.cep.controller;
 
 import br.com.infinet.cep.model.CepModel;
+import br.com.infinet.cep.service.CepService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 public class CepController implements Serializable {
 
     private static final long serialVersionUID = 6046704732666502085L;
 
-    @GetMapping(value="/cep/{cep}")
-    public ResponseEntity<CepModel> doObterCep(@PathVariable(name = "cep") String cep) {
+    @Autowired
+    CepService cepService;
 
-        RestTemplate restTemplate = new RestTemplate();
+    @GetMapping(value="/cep/{numeroCep}")
+    public ResponseEntity<CepModel> pesquisar(@PathVariable(name = "numeroCep") String numeroCep) {
 
-        String uri = "http://viacep.com.br/ws/{cep}/json/";
-
-        Map<String, String> params = new HashMap<String, String>();
-
-        params.put("cep", cep);
-
-        CepModel cepModel = restTemplate.getForObject(uri, CepModel.class, params);
+        CepModel cepModel = cepService.pesquisar(numeroCep);
 
         return new ResponseEntity<CepModel>(cepModel, HttpStatus.OK);
     }
