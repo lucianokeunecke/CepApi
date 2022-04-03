@@ -7,3 +7,5 @@
 # CepApi
 
 Esta API tem por objetivo comunicar-se com o WebService ViaCep (API de terceiros), retornando um arquivo Json do endereço correspondente do CEP.
+
+Esta API está configurada para rodar no server.port 8081
