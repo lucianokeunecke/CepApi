@@ -8,11 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
 
 @RestController
+@RequestMapping("/cep")
 public class CepController implements Serializable {
 
     private static final long serialVersionUID = 6046704732666502085L;
@@ -23,7 +25,7 @@ public class CepController implements Serializable {
     @Autowired
     GerarExcecaoAleatoriaService gerarExcecaoAleatoriaService;
 
-    @GetMapping(value="/cep/{numeroCep}")
+    @GetMapping(value="/{numeroCep}")
     public ResponseEntity<CepModel> pesquisar(@PathVariable(name = "numeroCep") String numeroCep) {
 
         gerarExcecaoAleatoriaService.gerar();
