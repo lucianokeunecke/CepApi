@@ -17,16 +17,12 @@ public class CepServiceImpl implements CepService {
     @Override
     public CepModel pesquisar(String numeroCep) {
 
-        LOGGER.info(String.format("Comunicando-se com o WebService ViaCep, passando como parâmetro o número do CEP: %s ", numeroCep));
-
         RestTemplate restTemplate = new RestTemplate();
 
-        String uri = "http://viacep.com.br/ws/{numeroCep}/json/";
+        String uri = "http://viacep.com.br/ws/" + numeroCep + "/json/";
 
-        Map<String, String> params = new HashMap<String, String>();
+        LOGGER.info(String.format("Comunicando-se com o WebService ViaCep: %s ", uri));
 
-        params.put("numeroCep", numeroCep);
-
-        return restTemplate.getForObject(uri, CepModel.class, params);
+        return restTemplate.getForObject(uri, CepModel.class);
     }
 }
