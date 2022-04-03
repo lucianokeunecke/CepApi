@@ -7,12 +7,17 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 @Service
 public class CepServiceImpl implements CepService {
 
+    private static final Logger LOGGER = Logger.getLogger(CepServiceImpl.class.getName());
+
     @Override
     public CepModel pesquisar(String numeroCep) {
+
+        LOGGER.info(String.format("Comunicando-se com o WebService ViaCep, passando como parâmetro o número do CEP: %s ", numeroCep));
 
         RestTemplate restTemplate = new RestTemplate();
 
